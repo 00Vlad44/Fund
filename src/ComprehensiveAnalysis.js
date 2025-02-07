@@ -354,7 +354,7 @@ const ComprehensiveAnalysis = () => {
       : value.toFixed(1);
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', backgroundColor: '#000000', color: '#f9fafb' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', backgroundColor: '#1f2937', color: '#f9fafb' }}>
       <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '10px' }}>
         Digital Entertainment Sector Analysis
       </h1>
@@ -363,11 +363,11 @@ const ComprehensiveAnalysis = () => {
       </p>
 
       {Object.entries(updatedStockData).map(([section, companies]) => (
-        <div key={section} style={{ backgroundColor: '#1f2937', borderRadius: '8px', padding: '20px', marginBottom: '40px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
+        <div key={section} style={{ backgroundColor: '#374151', borderRadius: '8px', padding: '20px', marginBottom: '40px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#f9fafb' }}>{section}</h2>
             <select
-              style={{ padding: '8px', borderRadius: '4px', border: '1px solid #4b5563', backgroundColor: '#000000', color: '#f9fafb' }}
+              style={{ padding: '8px', borderRadius: '4px', border: '1px solid #4b5563', backgroundColor: '#1f2937', color: '#f9fafb' }}
               value={selectedMetricsBySection[section]}
               onChange={e =>
                 setSelectedMetricsBySection(prev => ({
@@ -390,7 +390,7 @@ const ComprehensiveAnalysis = () => {
               style={{
                 padding: '8px 12px',
                 borderRadius: '4px',
-                backgroundColor: selectedStocksBySection[section].length === 0 ? '#2563eb' : '#1f2937',
+                backgroundColor: selectedStocksBySection[section].length === 0 ? '#2563eb' : '#374151',
                 color: selectedStocksBySection[section].length === 0 ? '#ffffff' : '#f9fafb',
                 border: 'none',
                 cursor: 'pointer'
@@ -412,7 +412,7 @@ const ComprehensiveAnalysis = () => {
                   borderRadius: '4px',
                   backgroundColor: selectedStocksBySection[section].includes(company.ticker)
                     ? company.color
-                    : '#1f2937',
+                    : '#374151',
                   color: selectedStocksBySection[section].includes(company.ticker)
                     ? '#ffffff'
                     : '#f9fafb',
@@ -482,7 +482,7 @@ const ComprehensiveAnalysis = () => {
           {/* Data Table */}
           <div style={{ overflowX: 'auto', marginTop: '20px' }}>
             <table style={{ minWidth: '100%', borderCollapse: 'collapse' }}>
-              <thead style={{ backgroundColor: '#1f2937' }}>
+              <thead style={{ backgroundColor: '#374151' }}>
                 <tr>
                   <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#f9fafb', borderBottom: '1px solid #4b5563' }}>
                     Company
@@ -502,7 +502,7 @@ const ComprehensiveAnalysis = () => {
               </thead>
               <tbody>
                 {getFilteredData(section, companies).map((company, index) => (
-                  <tr key={index} style={{ borderBottom: '1px solid #4b5563', backgroundColor: index % 2 === 0 ? '#1f2937' : '#111827' }}>
+                  <tr key={index} style={{ borderBottom: '1px solid #4b5563', backgroundColor: index % 2 === 0 ? '#374151' : '#1f2937' }}>
                     <td style={{ padding: '12px' }}>
                       <div style={{ fontWeight: 'bold', color: company.color }}>{company.name}</div>
                       <div style={{ fontSize: '0.875rem', color: '#d1d5db' }}>{company.ticker}</div>
@@ -547,7 +547,7 @@ const ComprehensiveAnalysis = () => {
       ))}
 
       {/* Definitions Section */}
-      <div style={{ backgroundColor: '#1f2937', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
+      <div style={{ backgroundColor: '#374151', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '16px' }}>Definitions & Methodologies</h2>
         <ul style={{ listStyleType: 'disc', paddingLeft: '20px', lineHeight: '1.6' }}>
           <li><strong>Market Cap:</strong> The total market value of a company's outstanding shares, calculated as the share price multiplied by the number of shares outstanding.</li>

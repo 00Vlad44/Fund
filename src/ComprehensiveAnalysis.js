@@ -354,20 +354,20 @@ const ComprehensiveAnalysis = () => {
       : value.toFixed(1);
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#1f2937', textAlign: 'center', marginBottom: '10px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px', backgroundColor: '#1f2937', color: '#f9fafb' }}>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', textAlign: 'center', marginBottom: '10px' }}>
         Digital Entertainment Sector Analysis
       </h1>
-      <p style={{ textAlign: 'center', color: '#6b7280', marginBottom: '30px' }}>
+      <p style={{ textAlign: 'center', color: '#d1d5db', marginBottom: '30px' }}>
         Live Market Data Analysis
       </p>
 
       {Object.entries(updatedStockData).map(([section, companies]) => (
-        <div key={section} style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', marginBottom: '40px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+        <div key={section} style={{ backgroundColor: '#374151', borderRadius: '8px', padding: '20px', marginBottom: '40px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1f2937' }}>{section}</h2>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#f9fafb' }}>{section}</h2>
             <select
-              style={{ padding: '8px', borderRadius: '4px', border: '1px solid #d1d5db' }}
+              style={{ padding: '8px', borderRadius: '4px', border: '1px solid #4b5563', backgroundColor: '#1f2937', color: '#f9fafb' }}
               value={selectedMetricsBySection[section]}
               onChange={e =>
                 setSelectedMetricsBySection(prev => ({
@@ -390,8 +390,8 @@ const ComprehensiveAnalysis = () => {
               style={{
                 padding: '8px 12px',
                 borderRadius: '4px',
-                backgroundColor: selectedStocksBySection[section].length === 0 ? '#2563eb' : '#e5e7eb',
-                color: selectedStocksBySection[section].length === 0 ? '#ffffff' : '#374151',
+                backgroundColor: selectedStocksBySection[section].length === 0 ? '#2563eb' : '#374151',
+                color: selectedStocksBySection[section].length === 0 ? '#ffffff' : '#f9fafb',
                 border: 'none',
                 cursor: 'pointer'
               }}
@@ -412,10 +412,10 @@ const ComprehensiveAnalysis = () => {
                   borderRadius: '4px',
                   backgroundColor: selectedStocksBySection[section].includes(company.ticker)
                     ? company.color
-                    : '#f3f4f6',
+                    : '#374151',
                   color: selectedStocksBySection[section].includes(company.ticker)
                     ? '#ffffff'
-                    : '#374151',
+                    : '#f9fafb',
                   border: 'none',
                   cursor: 'pointer'
                 }}
@@ -433,17 +433,16 @@ const ComprehensiveAnalysis = () => {
             ))}
           </div>
 
-          {/* Charts */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px', marginBottom: '30px' }}>
             {/* Bar Chart for Selected Metric */}
-            <div style={{ width: '600px', height: 400, border: '1px solid #e5e7eb', borderRadius: '4px', padding: '10px' }}>
+            <div style={{ width: '600px', height: 400, border: '1px solid #4b5563', borderRadius: '4px', padding: '10px', backgroundColor: '#111827' }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={getFilteredData(section, companies)}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="ticker" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#4b5563" />
+                  <XAxis dataKey="ticker" tick={{ fill: '#f9fafb' }} />
+                  <YAxis tick={{ fill: '#f9fafb' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#f9fafb' }} />
+                  <Legend wrapperStyle={{ color: '#f9fafb' }} />
                   <Bar dataKey={selectedMetricsBySection[section]} fill="#3b82f6">
                     {companies.map(entry => (
                       <Cell key={`cell-${entry.ticker}`} fill={entry.color} />
@@ -454,14 +453,14 @@ const ComprehensiveAnalysis = () => {
             </div>
 
             {/* Q1 Performance Line Chart */}
-            <div style={{ width: '600px', height: 400, border: '1px solid #e5e7eb', borderRadius: '4px', padding: '10px' }}>
+            <div style={{ width: '600px', height: 400, border: '1px solid #4b5563', borderRadius: '4px', padding: '10px', backgroundColor: '#111827' }}>
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={fixedYearsData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
+                <LineChart data={fixedYearsData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#4b5563" />
+                  <XAxis dataKey="year" scale="band" padding={{ left: 10, right: 10 }} tick={{ fill: '#f9fafb' }} />
+                  <YAxis tick={{ fill: '#f9fafb' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#f9fafb' }} />
+                  <Legend wrapperStyle={{ color: '#f9fafb' }} />
                   {getFilteredData(section, companies).map(company => (
                     <Line
                       key={company.ticker}
@@ -471,6 +470,8 @@ const ComprehensiveAnalysis = () => {
                       name={company.ticker}
                       stroke={company.color}
                       connectNulls
+                      dot={{ r: 4 }}
+                      activeDot={{ r: 6 }}
                     />
                   ))}
                 </LineChart>
@@ -481,30 +482,30 @@ const ComprehensiveAnalysis = () => {
           {/* Data Table */}
           <div style={{ overflowX: 'auto', marginTop: '20px' }}>
             <table style={{ minWidth: '100%', borderCollapse: 'collapse' }}>
-              <thead style={{ backgroundColor: '#f9fafb' }}>
+              <thead style={{ backgroundColor: '#374151' }}>
                 <tr>
-                  <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}>
+                  <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#f9fafb', borderBottom: '1px solid #4b5563' }}>
                     Company
                   </th>
                   {metrics.map(metric => (
                     <th
                       key={metric.value}
-                      style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}
+                      style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#f9fafb', borderBottom: '1px solid #4b5563' }}
                     >
                       {metric.label}
                     </th>
                   ))}
-                  <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}>
+                  <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.875rem', color: '#f9fafb', borderBottom: '1px solid #4b5563' }}>
                     AI Exposure
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {getFilteredData(section, companies).map((company, index) => (
-                  <tr key={index} style={{ borderBottom: '1px solid #e5e7eb', backgroundColor: index % 2 === 0 ? '#ffffff' : '#f9fafb' }}>
+                  <tr key={index} style={{ borderBottom: '1px solid #4b5563', backgroundColor: index % 2 === 0 ? '#374151' : '#1f2937' }}>
                     <td style={{ padding: '12px' }}>
                       <div style={{ fontWeight: 'bold', color: company.color }}>{company.name}</div>
-                      <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>{company.ticker}</div>
+                      <div style={{ fontSize: '0.875rem', color: '#d1d5db' }}>{company.ticker}</div>
                     </td>
                     {metrics.map(metric => (
                       <td
@@ -514,7 +515,7 @@ const ComprehensiveAnalysis = () => {
                           fontSize: '0.875rem',
                           color: metric.value === 'revenue_growth' && company[metric.value] !== null
                             ? company[metric.value] >= 0 ? '#16a34a' : '#dc2626'
-                            : '#374151'
+                            : '#f9fafb'
                         }}
                       >
                         {formatMetricValue(metric.value, company[metric.value])}
@@ -528,16 +529,11 @@ const ComprehensiveAnalysis = () => {
                         fontWeight: '600',
                         backgroundColor:
                           company.aiExposure === 'High'
-                            ? '#d1fae5'
-                            : company.aiExposure === 'Medium'
-                            ? '#fef3c7'
-                            : '#f3f4f6',
-                        color:
-                          company.aiExposure === 'High'
                             ? '#065f46'
                             : company.aiExposure === 'Medium'
                             ? '#92400e'
-                            : '#374151'
+                            : '#4b5563',
+                        color: '#f9fafb'
                       }}>
                         {company.aiExposure}
                       </span>
@@ -550,10 +546,10 @@ const ComprehensiveAnalysis = () => {
         </div>
       ))}
 
-      {/* Summary Definitions Section */}
-      <div style={{ backgroundColor: '#ffffff', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1f2937', marginBottom: '16px' }}>Definitions & Methodologies</h2>
-        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', color: '#4b5563', lineHeight: '1.6' }}>
+      {/* Definitions Section */}
+      <div style={{ backgroundColor: '#374151', borderRadius: '8px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', color: '#f9fafb' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '16px' }}>Definitions & Methodologies</h2>
+        <ul style={{ listStyleType: 'disc', paddingLeft: '20px', lineHeight: '1.6' }}>
           <li><strong>Market Cap:</strong> The total market value of a company's outstanding shares, calculated as the share price multiplied by the number of shares outstanding.</li>
           <li><strong>P/E Ratio:</strong> The price-to-earnings ratio, computed by dividing the current share price by the earnings per share.</li>
           <li><strong>Operating Margin:</strong> Calculated as (Operating Income / Revenue) * 100, indicating the percentage of revenue remaining after operating expenses.</li>

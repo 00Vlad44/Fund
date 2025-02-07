@@ -1,0 +1,190 @@
+{
+    "Streaming & Content": [
+      {
+        "ticker": "NFLX",
+        "historical_q1": [
+          { "year": 2015, "performance": 21.1 },
+          { "year": 2016, "performance": -7.07 },
+          { "year": 2017, "performance": 16.13 },
+          { "year": 2018, "performance": 46.89 },
+          { "year": 2019, "performance": 33.21 },
+          { "year": 2020, "performance": 12.48 },
+          { "year": 2021, "performance": -1.81 },
+          { "year": 2022, "performance": -36.14 },
+          { "year": 2023, "performance": 14.74 },
+          { "year": 2024, "performance": 29.63 },
+          { "year": 2025, "performance": 14.54 }
+        ]
+      },
+      {
+        "ticker": "GOOGL",
+        "historical_q1": [
+          { "year": 2015, "performance": 5.97 },
+          { "year": 2016, "performance": 1.17 },
+          { "year": 2017, "performance": 5.13 },
+          { "year": 2018, "performance": -3.36 },
+          { "year": 2019, "performance": 11.59 },
+          { "year": 2020, "performance": -16.25 },
+          { "year": 2021, "performance": 18.56 },
+          { "year": 2022, "performance": -2.11 },
+          { "year": 2023, "performance": 13.21 },
+          { "year": 2024, "performance": 9.24 },
+          { "year": 2025, "performance": 1.15 }
+        ]
+      },
+      {
+        "ticker": "WBD",
+        "historical_q1": [
+          { "year": 2015, "performance": -9.83 },
+          { "year": 2016, "performance": 6.36 },
+          { "year": 2017, "performance": 2.65 },
+          { "year": 2018, "performance": -7.27 },
+          { "year": 2019, "performance": 4.61 },
+          { "year": 2020, "performance": -37.9 },
+          { "year": 2021, "performance": 41.82 },
+          { "year": 2022, "performance": 1.46 },
+          { "year": 2023, "performance": 55.66 },
+          { "year": 2024, "performance": -25.13 },
+          { "year": 2025, "performance": -4.32 }
+        ]
+      },
+      {
+        "ticker": "DIS",
+        "historical_q1": [
+          { "year": 2015, "performance": 13.19 },
+          { "year": 2016, "performance": -3.95 },
+          { "year": 2017, "performance": 6.69 },
+          { "year": 2018, "performance": -10.16 },
+          { "year": 2019, "performance": 1.89 },
+          { "year": 2020, "performance": -32.66 },
+          { "year": 2021, "performance": 4.42 },
+          { "year": 2022, "performance": -10.08 },
+          { "year": 2023, "performance": 10.26 },
+          { "year": 2024, "performance": 34.89 },
+          { "year": 2025, "performance": 1.15 }
+        ]
+      }
+    ],
+    "Gaming & eSports": [
+      {
+        "ticker": "MSFT",
+        "historical_q1": [
+          { "year": 2015, "performance": -11.78 },
+          { "year": 2016, "performance": 1.18 },
+          { "year": 2017, "performance": 5.64 },
+          { "year": 2018, "performance": 6.69 },
+          { "year": 2019, "performance": 17.13 },
+          { "year": 2020, "performance": 0.03 },
+          { "year": 2021, "performance": 6.75 },
+          { "year": 2022, "performance": -6.05 },
+          { "year": 2023, "performance": 18.86 },
+          { "year": 2024, "performance": 13.65 },
+          { "year": 2025, "performance": -0.66 }
+        ]
+      },
+      {
+        "ticker": "NTDOY",
+        "historical_q1": [
+          { "year": 2015, "performance": 45.09 },
+          { "year": 2016, "performance": 5.28 },
+          { "year": 2017, "performance": 11.3 },
+          { "year": 2018, "performance": 20.94 },
+          { "year": 2019, "performance": 6.98 },
+          { "year": 2020, "performance": -5.03 },
+          { "year": 2021, "performance": -8.01 },
+          { "year": 2022, "performance": 9.78 },
+          { "year": 2023, "performance": -8.29 },
+          { "year": 2024, "performance": 6.17 },
+          { "year": 2025, "performance": 22.34 }
+        ]
+      },
+      {
+        "ticker": "RBLX",
+        "historical_q1": [
+          { "year": 2021, "performance": -6.23 },
+          { "year": 2022, "performance": -51.3 },
+          { "year": 2023, "performance": 54.79 },
+          { "year": 2024, "performance": -11.19 },
+          { "year": 2025, "performance": 14.07 }
+        ]
+      }
+    ],
+    "Social Media": [
+      {
+        "ticker": "META",
+        "historical_q1": [
+          { "year": 2015, "performance": 6.05 },
+          { "year": 2016, "performance": 12.21 },
+          { "year": 2017, "performance": 21.86 },
+          { "year": 2018, "performance": -11.92 },
+          { "year": 2019, "performance": 22.86 },
+          { "year": 2020, "performance": -20.89 },
+          { "year": 2021, "performance": 7.09 },
+          { "year": 2022, "performance": -32.7 },
+          { "year": 2023, "performance": 66.62 },
+          { "year": 2024, "performance": 40.37 },
+          { "year": 2025, "performance": 18.82 }
+        ]
+      },
+      {
+        "ticker": "SNAP",
+        "historical_q1": [
+          { "year": 2017, "performance": -9.19 },
+          { "year": 2018, "performance": 6.15 },
+          { "year": 2019, "performance": 90.33 },
+          { "year": 2020, "performance": -29.38 },
+          { "year": 2021, "performance": 0.04 },
+          { "year": 2022, "performance": -20.93 },
+          { "year": 2023, "performance": 23.28 },
+          { "year": 2024, "performance": -28.87 },
+          { "year": 2025, "performance": -4.89 }
+        ]
+      }
+    ],
+    "E-commerce": [
+      {
+        "ticker": "AMZN",
+        "historical_q1": [
+          { "year": 2015, "performance": 21.42 },
+          { "year": 2016, "performance": -6.01 },
+          { "year": 2017, "performance": 16.28 },
+          { "year": 2018, "performance": 21.73 },
+          { "year": 2019, "performance": 15.7 },
+          { "year": 2020, "performance": 3.47 },
+          { "year": 2021, "performance": -4.12 },
+          { "year": 2022, "performance": -2.41 },
+          { "year": 2023, "performance": 18.85 },
+          { "year": 2024, "performance": 20.31 },
+          { "year": 2025, "performance": 8.45 }
+        ]
+      },
+      {
+        "ticker": "PDD",
+        "historical_q1": [
+          { "year": 2019, "performance": 11.66 },
+          { "year": 2020, "performance": -13.58 },
+          { "year": 2021, "performance": -18.79 },
+          { "year": 2022, "performance": -22.0 },
+          { "year": 2023, "performance": -9.57 },
+          { "year": 2024, "performance": -20.18 },
+          { "year": 2025, "performance": 16.34 }
+        ]
+      },
+      {
+        "ticker": "SHOP",
+        "historical_q1": [
+          { "year": 2016, "performance": 7.97 },
+          { "year": 2017, "performance": 61.26 },
+          { "year": 2018, "performance": 18.11 },
+          { "year": 2019, "performance": 50.16 },
+          { "year": 2020, "performance": 5.53 },
+          { "year": 2021, "performance": -4.0 },
+          { "year": 2022, "performance": -48.24 },
+          { "year": 2023, "performance": 30.35 },
+          { "year": 2024, "performance": 4.52 },
+          { "year": 2025, "performance": 10.28 }
+        ]
+      }
+    ]
+  }
+  
